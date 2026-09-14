@@ -28,7 +28,12 @@ Say which you picked, what the alternative was, and what you gave up by not taki
 
 "There was no alternative" is not an answer. Find the fork.
 
-*Your answer here.*
+I did a lot of work in Vue over the summer at my internship and I actually decided to steer away from this to not add
+any complexity with the build. The concrete version is specific to this repo: Pages is serving main at / (root), so a 
+Vue build would have forced me to either commit dist/ or switch Pages over to an Actions deploy — i.e. it would have 
+put a build step inside the pipeline. So, I am just using plain-HTML to serve the site. The tradeoff here to me is that
+I will not have the modularity that Vue provides via components. I will instead have to piece each of the sections out within HTML.
+
 
 ---
 

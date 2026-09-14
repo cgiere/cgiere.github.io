@@ -3,21 +3,143 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hello</title>
+  <title>Christopher Giere</title>
+  <meta name="description" content="Christopher Giere — M.S. Computer Science student at Colorado School of Mines and full-stack developer.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h1>Hello, world.</h1>
+<a class="skip" href="#main">Skip to content</a>
 
-  <p>
-    This page is live. That is the only thing it is here to prove.
-  </p>
+<header class="masthead">
+  <div class="wrap">
+    <h1>Christopher Giere</h1>
+    <p class="tagline">
+      Master's Student in Computer Science at the Colorado School of Mines with experience in Full Stack development.
+    </p>
+    <nav aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
 
-  <p>
-    Everything about it is yours to delete. Open Claude Code in this folder and
-    tell it what you actually want to build.
-  </p>
+<main id="main" class="wrap">
+
+  <section id="about" aria-labelledby="about-h">
+    <h2 id="about-h">About</h2>
+    <p>
+      I'm currently building a full-stack platform for interactive geological data
+      visualization at Colorado School of Mines, and interning as a developer at
+      Seek and Deploy, where I architect internal tools and client websites end to end.
+      After a few years in treasury and client operations, I realized the parts of those
+      jobs I liked most &mdash; solving structured problems, working with data and systems
+      &mdash; pointed directly at software. So I went back to school to build the tools
+      instead of just using them.
+    </p>
+  </section>
+
+  <section id="experience" aria-labelledby="experience-h">
+    <h2 id="experience-h">Experience</h2>
+
+    <article class="entry">
+      <div class="entry-head">
+        <h3>Developer Intern</h3>
+        <p class="meta"><span>Seek and Deploy, Denver, CO</span> <span class="dates">May 2026&ndash;present</span></p>
+      </div>
+      <ul>
+        <li>Architected and built a full-stack internal time-tracking application from scratch in Nuxt 4, Vue 3 and Supabase/Postgres &mdash; a relational schema covering clients, projects, employees and time entries, and 15 REST endpoints supporting full CRUD, dynamic routing, per-project CSV export and per-user weekly hour totals.</li>
+        <li>Replaced open signup with email-invite authentication and account provisioning, using Supabase Auth and Nuxt route middleware to build a secure invite, confirmation and set-password flow that restricts access to admin-approved employees.</li>
+        <li>Helped develop marketing and portfolio sites for 6+ client brands on Nuxt 3/4 with Sanity and Contentful as headless CMSes, architecting reusable page-builder systems that let non-technical clients compose pages from schema-driven content blocks.</li>
+        <li>Owned technical SEO across the client portfolio: shared composables and utilities for canonical URLs, JSON-LD structured data, and CMS-driven Open Graph and meta defaults with fallbacks, plus automated <code>sitemap.xml</code>, <code>robots.txt</code> and <code>llms.txt</code> generation.</li>
+        <li>Worked in a professional Git workflow across multiple repos &mdash; branching, resolving merge conflicts, and iterating on designer feedback to deliver responsive mobile-through-desktop layouts using SCSS design systems.</li>
+      </ul>
+    </article>
+
+    <article class="entry">
+      <div class="entry-head">
+        <h3>Developer &mdash; Geological Mapping Web Application</h3>
+        <p class="meta"><span>Colorado School of Mines, Golden, CO</span> <span class="dates">August 2025&ndash;present</span></p>
+      </div>
+      <ul>
+        <li>Engineered a full-stack web application for interactive geological data visualization, with map-based rendering and client-side filtering of spatial datasets.</li>
+        <li>Designed a data pipeline to extract and normalize legacy geological records, converting them into GeoJSON for efficient spatial representation and transport.</li>
+        <li>Implemented a RESTful FastAPI backend serving geospatial data, integrating SQL queries against a Supabase-hosted database for structured metadata and spatial indexing.</li>
+        <li>Built a JavaScript/React frontend with modular components and state management to support dynamic map interactions and dataset filtering.</li>
+        <li>Cut frontend load and improved responsiveness by separating spatial payloads (GeoJSON) from relational attributes.</li>
+        <li>Deployed and maintained the system on Linux using Git-based workflows for version control, testing and collaboration.</li>
+      </ul>
+    </article>
+
+    <article class="entry">
+      <div class="entry-head">
+        <h3>Treasury Analyst</h3>
+        <p class="meta"><span>STACK Infrastructure, Denver, CO</span> <span class="dates">July 2024&ndash;August 2025</span></p>
+      </div>
+    </article>
+
+    <article class="entry">
+      <div class="entry-head">
+        <h3>Client Administrator III</h3>
+        <p class="meta"><span>Wilmington Trust, N.A., Denver, CO</span> <span class="dates">October 2021&ndash;June 2024</span></p>
+      </div>
+    </article>
+  </section>
+
+  <section id="education" aria-labelledby="education-h">
+    <h2 id="education-h">Education</h2>
+
+    <article class="entry">
+      <div class="entry-head">
+        <h3>M.S. Computer Science</h3>
+        <p class="meta"><span>Colorado School of Mines, Golden, CO</span> <span class="dates">August 2025&ndash;May 2027</span></p>
+      </div>
+    </article>
+
+    <article class="entry">
+      <div class="entry-head">
+        <h3>B.A. Economics</h3>
+        <p class="meta"><span>Colorado College, Colorado Springs, CO</span> <span class="dates">August 2017&ndash;May 2021</span></p>
+      </div>
+    </article>
+  </section>
+
+  <section id="skills" aria-labelledby="skills-h">
+    <h2 id="skills-h">Skills</h2>
+    <dl class="skills">
+      <div>
+        <dt>Languages</dt>
+        <dd>C, JavaScript, Python, Java</dd>
+      </div>
+      <div>
+        <dt>Frontend</dt>
+        <dd>React, Vue, Nuxt, HTML, CSS</dd>
+      </div>
+      <div>
+        <dt>Backend &amp; infra</dt>
+        <dd>FastAPI, AWS, Git</dd>
+      </div>
+    </dl>
+  </section>
+
+  <section id="contact" aria-labelledby="contact-h">
+    <h2 id="contact-h">Contact</h2>
+    <ul class="links">
+      <li><a href="mailto:cjgiere99@gmail.com">cjgiere99@gmail.com</a></li>
+      <li><a href="https://github.com/cgiere">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/christopher-giere-0696118b/">LinkedIn</a></li>
+      <li><a href="resume.pdf">Resume (PDF)</a></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <p>Built by hand. Source on <a href="https://github.com/cgiere/cgiere.github.io">GitHub</a>.</p>
+</footer>
 
 </body>
 </html>
