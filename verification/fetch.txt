@@ -1,0 +1,81 @@
+$ date
+2026-09-13 20:53:28 MDT
+
+$ curl -sSI https://cgiere.github.io/
+HTTP/2 200 
+server: GitHub.com
+content-type: text/html; charset=utf-8
+last-modified: Mon, 14 Sep 2026 02:41:47 GMT
+access-control-allow-origin: *
+etag: "6aa75eeb-1a89"
+expires: Mon, 14 Sep 2026 03:03:28 GMT
+cache-control: max-age=600
+x-proxy-cache: MISS
+x-github-request-id: 2AF0:1FCF44:427EC11:47DB18A:6AA761A7
+x-github-edge-region: iad
+accept-ranges: bytes
+age: 0
+date: Mon, 14 Sep 2026 02:53:28 GMT
+via: 1.1 varnish
+x-served-by: cache-den-kden1300086-DEN
+x-cache: MISS
+x-cache-hits: 0
+x-timer: S1789354408.325957,VS0,VE68
+vary: Accept-Encoding
+x-fastly-request-id: ca87d5bec6ce88a91efb19ecd2d6575e6771e51b
+content-length: 6793
+
+$ curl -sS https://cgiere.github.io/ | head -40
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Christopher Giere</title>
+  <meta name="description" content="Christopher Giere — M.S. Computer Science student at Colorado School of Mines and full-stack developer.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="wrap">
+    <h1>Christopher Giere</h1>
+    <p class="tagline">
+      Master's Student in Computer Science at the Colorado School of Mines with experience in Full Stack development.
+    </p>
+    <nav aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+
+  <section id="about" aria-labelledby="about-h">
+    <h2 id="about-h">About</h2>
+    <p>
+      I'm currently building a full-stack platform for interactive geological data
+      visualization at Colorado School of Mines, and interning as a developer at
+      Seek and Deploy, where I architect internal tools and client websites end to end.
+      After a few years in treasury and client operations, I realized the parts of those
+      jobs I liked most &mdash; solving structured problems, working with data and systems
+      &mdash; pointed directly at software. So I went back to school to build the tools
+
+$ curl -sS -o /dev/null -w '%{http_code} %{content_type} %{size_download}b
+' https://cgiere.github.io/style.css
+200 text/css; charset=utf-8 4663b
+
+$ curl -sS -o /dev/null -w '%{http_code} %{content_type} %{size_download}b
+' https://cgiere.github.io/resume.pdf
+200 application/pdf 110498b
+
+$ git rev-parse HEAD  # local
+409857c082937368c430b32b584a79e13dbba085
+$ git ls-remote origin refs/heads/main  # what GitHub actually has
+409857c082937368c430b32b584a79e13dbba085	refs/heads/main
