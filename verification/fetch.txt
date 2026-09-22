@@ -1,31 +1,31 @@
 $ date
-2026-09-13 20:53:28 MDT
+2026-09-21 14:39:42 MDT
 
 $ curl -sSI https://cgiere.github.io/
 HTTP/2 200 
 server: GitHub.com
 content-type: text/html; charset=utf-8
-last-modified: Mon, 14 Sep 2026 02:41:47 GMT
+last-modified: Mon, 21 Sep 2026 20:39:05 GMT
 access-control-allow-origin: *
-etag: "6aa75eeb-1a89"
-expires: Mon, 14 Sep 2026 03:03:28 GMT
+etag: "6ab195e9-2dfb"
+expires: Mon, 21 Sep 2026 20:49:31 GMT
 cache-control: max-age=600
 x-proxy-cache: MISS
-x-github-request-id: 2AF0:1FCF44:427EC11:47DB18A:6AA761A7
+x-github-request-id: 17D8:201F05:4E499D:52280A:6AB19603
 x-github-edge-region: iad
 accept-ranges: bytes
-age: 0
-date: Mon, 14 Sep 2026 02:53:28 GMT
+date: Mon, 21 Sep 2026 20:39:42 GMT
 via: 1.1 varnish
-x-served-by: cache-den-kden1300086-DEN
-x-cache: MISS
-x-cache-hits: 0
-x-timer: S1789354408.325957,VS0,VE68
+age: 11
+x-served-by: cache-den-kden1300098-DEN
+x-cache: HIT
+x-cache-hits: 1
+x-timer: S1790023183.831775,VS0,VE1
 vary: Accept-Encoding
-x-fastly-request-id: ca87d5bec6ce88a91efb19ecd2d6575e6771e51b
-content-length: 6793
+x-fastly-request-id: 0ee5893f604c874816152f090de7d26b739727a3
+content-length: 11771
 
-$ curl -sS https://cgiere.github.io/ | head -40
+$ curl -sS https://cgiere.github.io/ | head -45
 <!doctype html>
 <html lang="en">
 <head>
@@ -33,49 +33,68 @@ $ curl -sS https://cgiere.github.io/ | head -40
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Christopher Giere</title>
   <meta name="description" content="Christopher Giere — M.S. Computer Science student at Colorado School of Mines and full-stack developer.">
+
+  <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="style.css">
+
+  <!-- Set the theme before first paint so an explicit choice never flashes. -->
+  <script>
+    try {
+      var t = localStorage.getItem('theme');
+      if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  </script>
 </head>
 <body>
 
 <a class="skip" href="#main">Skip to content</a>
 
-<header class="masthead">
-  <div class="wrap">
-    <h1>Christopher Giere</h1>
-    <p class="tagline">
-      Master's Student in Computer Science at the Colorado School of Mines with experience in Full Stack development.
-    </p>
-    <nav aria-label="Sections">
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#education">Education</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
+<div class="shell">
 
-<main id="main" class="wrap">
+  <aside class="rail">
+    <canvas id="topo" aria-hidden="true"></canvas>
+    <div class="rail-inner">
+      <h1>Christopher Giere</h1>
+      <p class="tagline">
+        Master&rsquo;s student in Computer Science at the Colorado School of Mines,
+        with experience in full-stack development.
+      </p>
 
-  <section id="about" aria-labelledby="about-h">
-    <h2 id="about-h">About</h2>
-    <p>
-      I'm currently building a full-stack platform for interactive geological data
-      visualization at Colorado School of Mines, and interning as a developer at
-      Seek and Deploy, where I architect internal tools and client websites end to end.
-      After a few years in treasury and client operations, I realized the parts of those
-      jobs I liked most &mdash; solving structured problems, working with data and systems
-      &mdash; pointed directly at software. So I went back to school to build the tools
+      <nav aria-label="Sections">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
-$ curl -sS -o /dev/null -w '%{http_code} %{content_type} %{size_download}b
-' https://cgiere.github.io/style.css
-200 text/css; charset=utf-8 4663b
+      <div class="rail-foot">
 
-$ curl -sS -o /dev/null -w '%{http_code} %{content_type} %{size_download}b
-' https://cgiere.github.io/resume.pdf
+# every local asset the page references, fetched from the live URL
+$ curl -sS -o /dev/null -w '%{http_code} %{content_type} %{size_download}b' https://cgiere.github.io/style.css
+200 text/css; charset=utf-8 14631b
+$ curl -sS -o /dev/null -w '%{http_code} %{content_type} %{size_download}b' https://cgiere.github.io/app.js
+200 application/javascript; charset=utf-8 7966b
+$ curl -sS -o /dev/null -w '%{http_code} %{content_type} %{size_download}b' https://cgiere.github.io/resume.pdf
 200 application/pdf 110498b
+$ curl -sS -o /dev/null -w '%{http_code} %{content_type} %{size_download}b' https://cgiere.github.io/fonts/inter-latin.woff2
+200 font/woff2 48432b
+$ curl -sS -o /dev/null -w '%{http_code} %{content_type} %{size_download}b' https://cgiere.github.io/fonts/fraunces-latin.woff2
+200 font/woff2 67388b
 
-$ git rev-parse HEAD  # local
-409857c082937368c430b32b584a79e13dbba085
-$ git ls-remote origin refs/heads/main  # what GitHub actually has
-409857c082937368c430b32b584a79e13dbba085	refs/heads/main
+# the deployed commit is the one I built
+$ git rev-parse HEAD
+866ee525d3198b9a374967248cb14fccee70948c
+$ git ls-remote origin refs/heads/main
+866ee525d3198b9a374967248cb14fccee70948c	refs/heads/main
+
+# sections actually present in the served HTML
+$ curl -sS https://cgiere.github.io/ | grep -oE 'id="(about|experience|projects|education|skills|contact)"'
+id="about"
+id="experience"
+id="projects"
+id="education"
+id="skills"
+id="contact"

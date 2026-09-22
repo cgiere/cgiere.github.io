@@ -14,7 +14,9 @@ Delete these instructions when you are done, or leave them. It does not matter.
 What you wanted at the start, and what is actually live now.
 Name one thing you dropped or added along the way, and why.
 
-*Your answer here.*
+I wanted a personal porfolio website from the start. Originally, I wanted to add more visual effects, such as a light 
+that would follow the cursor. This would have been pretty easy to implement yet I think the simplicity of the design works 
+well for what this project is.
 
 ---
 
@@ -47,7 +49,9 @@ If it genuinely never happened, say so plainly, and then say what you would have
 check in order to notice. Being honest here costs you far less than a story you cannot
 defend when you record your video.
 
-*Your answer here.*
+Originally the agent was pushing back on having the visual wave effect in the navigation container. I overruled this decision
+and went with the contained version anyway. I think it looks better this way as I originally had the visual effect spanning the entire
+width of the site.
 
 ---
 
@@ -60,7 +64,17 @@ A check that could not have failed is not a check.
 
 Link to your `verification/` folder.
 
-*Your answer here.*
+I checked the live website from outside my laptop, not localhost. The check did three things:
+
+1. It loaded https://cgiere.github.io and looked for content that only exists in the newest build.
+2. It checked that all required files (style.css, app.js, resume.pdf, and the two fonts) loaded successfully.
+3. It compared my local Git commit with the commit GitHub actually had.
+
+The results are in verification/fetch.txt.
+
+A simple check for a 200 status on the homepage would not have been enough. The site was still showing an older version even though it returned 200. Checking for content unique to the new build caught this problem.
+
+The asset checks would fail if any file returned a 404, which could cause the page to load but appear unstyled. The Git SHA check would fail if my commit had not actually reached GitHub. This happened once when a push stalled waiting for credentials but incorrectly reported success. Comparing the SHAs showed that the commit was still only on my computer.
 
 ---
 
@@ -71,4 +85,5 @@ fully understand.
 
 What would you do next, and how would you find out?
 
-*Your answer here.*
+I would have included more personal material about myself and maybe included a profile shot. It could be fun to add in the 
+cursor effect I talk about in question 1 or maybe some more dynamic components to draw the user into the experience.
